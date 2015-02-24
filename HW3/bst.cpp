@@ -1,11 +1,10 @@
 #include <iostream>
-#include <vector>
 #include <fstream>
+#include "bst.h"
 
 using namespace std;
 int main ( int argc, char *argv[] )
 {
-  vector<int> input;
   if ( argc != 2 ) // argc should be 2 for correct execution
     cout<<"usage: "<< argv[0] <<" <filename>\n";
   else {
@@ -17,13 +16,17 @@ int main ( int argc, char *argv[] )
       int x;
       // the_file.get ( x ) returns false if the end of the file
       //  is reached or an error occurs
+      BST *bst = new BST();
       while ( the_file >> x )
-        input.push_back(x);
+        bst->Add(x);
+      cout << "PRE ORDER:";
+      bst->printPreorder(bst->getRoot());
+      cout << endl << "IN ORDER:"; 
+      bst->printInorder(bst->getRoot());
+      cout << endl << "POST ORDER:"; 
+      bst->printPostorder(bst->getRoot());
     }
-    for (auto i : input) 
-    {
-      cout << i << endl;
-    }
+
   }
   // the_file is closed implicitly here
 }
