@@ -1,10 +1,15 @@
+/**
+ *  * An implementation of a binary search tree 
+ *  * Brandon Max - maxbrand
+ *  * A49257553
+ *  */
 using namespace std;
 struct Node
 {
   Node *left;
   Node *right;
   int value;
-  Node(int v) : value(v), left(nullptr), right(nullptr) {}
+  Node(int v) : left(nullptr), right(nullptr), value(v) {}
 };
 class BST
 {

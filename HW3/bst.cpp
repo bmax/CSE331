@@ -1,3 +1,8 @@
+/**
+ *  * An implementation of a binary search tree 
+ *  * Brandon Max - maxbrand
+ *  * A49257553
+ *  */
 #include <iostream>
 #include <fstream>
 #include "bst.h"
