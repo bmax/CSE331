@@ -1,20 +1,19 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 void quick_sort(int a[], int left, int right)
 {
-  int pivot = a[(left+right)/2];
+  int pivot = a[right];
   int i = left,j = right, temp;
   while (i <= j)
   {
-    while (a[i] < pivot)
+    while (i <= right && a[i] < pivot)
       i++;
-    while (a[j] > pivot)
+    while (j >= left && a[j] > pivot)
       j--;
     if (i <= j)
     {
-     temp = a[i];
-      a[i] = a[j];
-      a[j] = temp;
+      swap(a[i], a[j]);
       i++;
       j--;
     }
@@ -23,5 +22,5 @@ void quick_sort(int a[], int left, int right)
   if (left < j)
     quick_sort(a, left, j);
   if (i < right)
-    quick_sort(a,i,right);
+    quick_sort(a, i, right);
 }

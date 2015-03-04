@@ -72,7 +72,7 @@ int main()
   // you can refer Mark Allan Weiss Third Edition Figure 7.16 page 286. Note that this piece 
   // of code only use quick sort when the input has size at least 10. Please only implement 
   // the quicksort part no matter how large the input is. 
-  quick_sort(dataArray, 0, size);
+  quick_sort(copyArray, 0, size);
 
   gettimeofday(&end, NULL);  // get time at end of function
   // convert to seconds and print out
